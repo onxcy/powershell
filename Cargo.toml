@@ -2,6 +2,9 @@
 name = "powershell"
 version = "0.1.0"
 edition = "2021"
+description = "invoke PowerShell from Rust"
+license = "MIT"
+repository = "https://github.com/onxcy/powershell"
 
 [dependencies]
 base64 = "0.22.1"
