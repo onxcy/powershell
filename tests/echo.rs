@@ -1,11 +1,6 @@
-use powershell::PowerShell;
-
 #[test]
-fn test() {
-    let mut ps = PowerShell::new();
-    let out = ps.exec("echo '123'");
-    assert_eq!(out, "123");
-    let out = ps.exec("echo 'abc'");
-    assert_eq!(out, "abc");
-    drop(ps);
+fn test_echo() {
+    let output = powershell::execute("echo 'Hello world!'");
+    let output = std::str::from_utf8(&output.stdout).unwrap().trim();
+    assert_eq!(output, "Hello world!");
 }
