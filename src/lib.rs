@@ -7,8 +7,6 @@ pub fn execute(command: impl AsRef<str>) -> Output {
         .arg("-NoLogo")
         .arg("-NoProfile")
         .arg("-NonInteractive")
-        .arg("-WindowStyle")
-        .arg("Hidden")
         .arg("-ExecutionPolicy")
         .arg("Bypass")
         .arg("-EncodedCommand")
