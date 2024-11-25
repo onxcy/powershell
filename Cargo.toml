@@ -1,7 +1,10 @@
 [package]
 name = "powershell"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
+description = "invoke PowerShell from Rust"
+license = "MIT"
+repository = "https://github.com/onxcy/powershell"
 
 [dependencies]
 nom = "7.1.3"
