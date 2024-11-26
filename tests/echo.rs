@@ -1,6 +1,13 @@
+use core::str;
+
+use powershell::PowerShell;
+
 #[test]
 fn test_echo() {
-    let output = powershell::execute("echo 'Hello world!'");
-    let output = std::str::from_utf8(&output.stdout).unwrap().trim();
-    assert_eq!(output, "Hello world!");
+    let test_str = "hello world!";
+    let o = PowerShell::new()
+        .add_variable("a", test_str)
+        .invoke("echo $a");
+    let str = str::from_utf8(&o.stdout).unwrap().trim();
+    assert_eq!(str, test_str);
 }
